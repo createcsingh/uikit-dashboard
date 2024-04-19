@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>All Employees</title>
+		<link rel="icon" type="image/x-icon" href="images/favicon.png">
+        <meta charset="UTF-8">
+        <meta name="description" content="Clean and responsive administration panel">
+        <meta name="keywords" content="Admin,Panel,HTML,CSS,XML,JavaScript">
+        <meta name="author" content="Erik Campobadal">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+                <link rel="stylesheet" href="css/uikit.min.css" />
+		<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+		<link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/notyf.min.css" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>        <script src="js/uikit.min.js" ></script>
+		<script src="js/uikit-icons.min.js" ></script>
+    </head>
+    <body>
+		<div class="preloader">
+			<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="lds-ripple" style="background:0 0;"><circle cx="50" cy="50" r="4.719" fill="none" stroke="#1d3f72" stroke-width="2"><animate attributeName="r" calcMode="spline" values="0;40" keyTimes="0;1" dur="3" keySplines="0 0.2 0.8 1" begin="-1.5s" repeatCount="indefinite"/><animate attributeName="opacity" calcMode="spline" values="1;0" keyTimes="0;1" dur="3" keySplines="0.2 0 0.8 1" begin="-1.5s" repeatCount="indefinite"/></circle><circle cx="50" cy="50" r="27.591" fill="none" stroke="#5699d2" stroke-width="2"><animate attributeName="r" calcMode="spline" values="0;40" keyTimes="0;1" dur="3" keySplines="0 0.2 0.8 1" begin="0s" repeatCount="indefinite"/><animate attributeName="opacity" calcMode="spline" values="1;0" keyTimes="0;1" dur="3" keySplines="0.2 0 0.8 1" begin="0s" repeatCount="indefinite"/></circle></svg>
+		</div>	
+        <div id="sidebar" class="tm-sidebar-left">
+			<div class="sidebar-user">
+				<center>
+					<div class="user">
+						<img id="avatar" width="100" class="uk-box-shadow-large uk-border-rounded" src="images/avatar.jpg"/>
+						<div class="uk-margin-top"></div>
+						<div id="name" class="uk-text-truncate">Èrik Campobadal</div>
+						<span id="status" data-enabled="true" data-online-text="Online" data-away-text="Away" data-interval="10000" class="uk-margin-top uk-label uk-label-success"></span>
+					</div>
+					<br />
+				</center>
+			</div>
+			
+			<div class="uk-width-1-1 sidebar-menu-sec">
+				<ul class="uk-nav uk-nav-default">
+					<li class="active side-nav"><a href="index.html"><span class="uk-margin-small-right" uk-icon="icon: home"></span> Dashboard</a></li>			
+					<ul uk-accordion="multiple: true">
+						<li class="">
+							<a class="uk-accordion-title uk-text-small" href="#"><span class="uk-margin-small-right" uk-icon="icon: tag"></span>Attendance</a>
+							<div class="uk-accordion-content uk-margin-remove">
+								<ul class="uk-nav-default">
+								<li class="side-nav"><a href="#"> Today's Attendance</a></li>
+								<li class="side-nav"><a href="#"> Attendance Sheet</a></li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+					<li class="side-nav"><a href="employees.html"><span class="uk-margin-small-right" uk-icon="icon: users"></span> Employees</a></li>
+					
+					<li class="side-nav"><a href="my-leaves.html"><span class="uk-margin-small-right" uk-icon="icon: file-edit"></span> My Leaves</a></li>
+					
+					<!-- Admin Leave Management Menu Start -->
+					<ul uk-accordion="multiple: true">
+						<li class="">
+							<a href="#" class="uk-accordion-title uk-text-small"><span class="uk-margin-small-right" uk-icon="icon: database"></span> Leave Management</a>
+							<div class="uk-accordion-content uk-margin-remove">
+								<ul class="uk-nav-default">
+								<li class="side-nav"><a href="leave-requests.html"> All Leave Requests</a></li>
+								<li class="side-nav"><a href="leave-balance.html"> Leave Balance</a></li>
+								<li class="side-nav"><a href="leave-type.html"> Leave Type</a></li>
+								</ul>
+							</div>						
+						</li>
+					</ul>
+					<!-- Admin Leave Management Menu End -->
+					
+					
+					<li class="side-nav"><a href="team.html"><span class="uk-margin-small-right" uk-icon="icon: code"></span> Team</a></li>
+					<li class="side-nav"><a href="my-account.html"><span class="uk-margin-small-right" uk-icon="icon: user"></span> My Profile</a></li>
+					
+					<ul uk-accordion="multiple: true">
+						<li class="">
+							<a class="uk-accordion-title uk-text-small" href="#"><span class="uk-margin-small-right" uk-icon="icon: settings"></span>Settings</a>
+							<div class="uk-accordion-content uk-margin-remove">
+								<ul class="uk-nav-default">
+								<li class="side-nav"><a href="site-setting.html"> Site Settings</a></li>
+								<li class="side-nav"><a href="change-password.html"> Change Password</a></li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+					<li class="side-nav"><a href="#"><span class="uk-margin-small-right" uk-icon="icon: sign-out"></span> Log Out</a></li>
+				</ul>
+			</div>
+        </div>
+		
+        <div class="content-padder content-background">
+			<div class="uk-navbar-container tm-navbar-container uk-active ">
+				<div class="uk-container uk-container-expand">
+					<nav uk-navbar>
+						<div class="uk-navbar-left">
+							<a id="sidebar_toggle" class="uk-navbar-toggle" uk-navbar-toggle-icon ></a>
+							<a href="#" class="uk-navbar-item uk-logo">
+							</a>
+						</div>
+						<div class="uk-navbar-right uk-light">
+							<ul class="uk-navbar-nav">
+								<li class="uk-active">
+									<a href="#"><img id="avatar" width="28" class="uk-border-circle" src="images/avatar.jpg"></a>
+									<div uk-dropdown="pos: bottom-right; mode: click; offset: -17;" class="dash-head-right-dropdown-parent uk-padding-remove uk-width-small">
+									   <ul class="uk-nav uk-navbar-dropdown-nav dash-head-right-dropdown">
+										   <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: user"></span>Edit Profile</a></li>
+										   <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: sign-out"></span>Logout</a></li>
+									   </ul>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</nav>
+				</div>
+			</div>
+			
+			<div class="uk-section-xsmall uk-container uk-container-large header log-br uk-flex">
+                <div class="breadc">
+                    <h2><span class="ion-speedometer"></span> Add Leave Type</h2>
+                    <ul class="uk-breadcrumb">
+                        <li><a href="index.html"><span class="uk-margin-small-right" uk-icon="icon: home"></span>Home</a></li>
+                        <li><span href="">Add Leave Type</span></li>
+                    </ul>					
+                </div>
+				<div class="logo">
+				   <a href="#"><img src="images/am.svg" class="anm-circle"></a>
+				</div>
+            </div>
+			
+           	<!--  <div class="uk-section-xsmall">
+                <div class="uk-container uk-container-large">
+				<span uk-icon="icon: thumbnails;ratio: 2" uk-toggle="target: .grid-view" class="uk-icon-button uk-align-right"></span> 
+				</div>
+			</div> -->
+					
+			<div class="uk-section-xsmall">
+                <div class="uk-container uk-container-large">
+					<div class="uk-card uk-card-default">
+						<div class="uk-card-body">
+							<form class="uk-form-stacked">
+								<h4 class="uk-text-bold">Add Leave Type</h4>
+								<div class="uk-column-1-2">
+									<div class="uk-margin-small-bottom">
+										<label class="uk-form-label">Leave Name</label>
+										<div class="uk-form-controls">
+											<input class="uk-input" type="date" placeholder="Leave Name" aria-label="Input">
+										</div>
+									</div>
+									<div class="uk-margin-small-bottom">
+										<label class="uk-form-label">Leave Type</label>
+										<div class="uk-form-controls">
+											 <select class="uk-select" aria-label="Select">
+												<option value="casual-leave">Paid</option>
+												<option value="sick-leave">Unpaid</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								
+								<div class="uk-column-1-2">
+									<div class="uk-margin-small-bottom">
+										<label class="uk-form-label">Leave Unit</label>
+										<div class="uk-form-controls">
+											 <select class="uk-select" aria-label="Select">
+												<option value="casual-leave">Hours</option>
+												<option value="sick-leave">Days</option>
+												<option value="sick-leave">Months</option>
+											</select>
+										</div>
+									</div>
+									<div class="uk-margin-small-bottom">
+										<label class="uk-form-label">Status</label>
+										<div class="uk-form-controls">
+											 <select class="uk-select" aria-label="Select">
+												<option value="casual-leave">Active</option>
+												<option value="sick-leave">Deactive</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								
+								<div class="uk-column-1-1">
+									<div class="uk-margin-small-bottom">
+										<label class="uk-form-label">Note</label>
+										<div class="uk-form-controls">
+											<textarea class="uk-textarea" rows="4" placeholder="Note" aria-label="Textarea"></textarea>
+										</div>
+									</div>								
+								</div>
+								<div class="uk-margin uk-margin-remove-bottom uk-align-right">
+									<button type="submit" class="uk-button uk-button-primary">Add Leave Type</button>
+								</div>
+							</form>
+						</div>
+					</div>
+                </div>
+            </div>
+			
+			<!-- <div class="uk-container uk-container-expand uk-padding-small uk-background-white footer">
+				<p class="uk-text-small">copyright(c).</p>
+			</div> -->
+        </div>
+		<!-- Load More Javascript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.min.js" integrity="sha256-UGwvyUFH6Qqn0PSyQVw4q3vIX0wV1miKTracNJzAWPc=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.transit/0.9.12/jquery.transit.min.js" integrity="sha256-rqEXy4JTnKZom8mLVQpvni3QHbynfjPmPxQVsPZgmJY=" crossorigin="anonymous"></script>
+		<script src="js/notyf.min.js"></script>
+		<script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
+		<script type="text/javascript" language="javascript" src="js/dataTables.uikit.js"></script>
+		<!-- Required Overall Script -->
+        <script src="js/script.js"></script>
+		<!-- Status Updater -->
+		<script src="js/status.js"></script>
+		<!-- Sample Notifications -->
+		<script src="js/notification.js"></script>
+    </body>
+</html>
